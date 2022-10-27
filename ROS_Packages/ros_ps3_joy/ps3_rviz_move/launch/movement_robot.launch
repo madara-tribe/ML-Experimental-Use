@@ -1,0 +1,16 @@
+<launch>
+  <arg name="model" default="$(find ps3_rviz_move)/urdf/movement_robot.urdf"/>
+  <arg name="rvizconfig" default="$(find ps3_rviz_move)/rviz/movement_robot.rviz"/>
+  <arg name="joy" default="false" />
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+  <group if="$(arg joy)">
+    <node name="joy_node"   pkg="joy" type="joy_node" />
+    <node name="joy_twist_publisher" pkg="ps3_joy_basic" type="joy_twist_publisher"/>
+  </group>
+  <node name="robot_sim" pkg="ps3_rviz_move" type="robot_sim"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>
+

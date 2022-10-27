@@ -1,0 +1,1 @@
+http://{robot_ip}:10000/stream?topic=/usb_cam/image_raw

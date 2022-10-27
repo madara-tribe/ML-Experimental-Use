@@ -1,0 +1,8 @@
+<launch>
+  <arg name="cmd_vel" default="/wheel_robot/diff_drive_controller/cmd_vel"/>
+  <arg name="name" default="wheel_drive"/>
+
+  <param name="cmd_vel_topic_name" value="$(arg cmd_vel)"/>
+
+  <node name="turtlebot3_drive" pkg="turtlebot3_gazebo" type="turtlebot3_drive" required="true" output="screen"/>
+</launch>
