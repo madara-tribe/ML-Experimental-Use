@@ -1,2 +1,0 @@
-roslaunch jetbot_simulation jetbot.launch
-roslaunch jetbot_ps3_control joy_control.launch
