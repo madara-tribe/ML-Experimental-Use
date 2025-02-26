@@ -1,0 +1,7 @@
+# Python 3.6.13
+# PyQt5 version check
+# from PyQt5.QtCore import QT_VERSION_STR, PYQT_VERSION_STR
+# print("Qt: v", QT_VERSION_STR, "\tPyQt: v", PYQT_VERSION_STR)
+
+PyQt5==5.15.6
+matplotlib==3.3.4
